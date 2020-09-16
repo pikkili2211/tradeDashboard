@@ -9,9 +9,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.Date;
 
 import org.assertj.core.api.Assertions;
-//import org.junit.FixMethodOrder;
+import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.Test;
-//import org.junit.runners.MethodSorters;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,9 +23,9 @@ import com.db.trade.controller.TradeController;
 import com.db.trade.model.Trade;
 import com.db.trade.util.DateUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 @SpringBootTest
 @AutoConfigureMockMvc
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestTradeController {
 
 	@Autowired
@@ -55,7 +55,7 @@ public class TestTradeController {
 		t1.setTradeId("T1");
 		t1.setVersion(1);
 		t1.setBookId("B1");
-		t1.setMaturityDate("2020-09-10");
+		t1.setMaturityDate("2020-09-20");
 		t1.setCreatedDate(DateUtil.dateToStringConversion(new Date()));
 		t1.setExpired("N");
 		t1.setCounterPartyId("CP-1");
